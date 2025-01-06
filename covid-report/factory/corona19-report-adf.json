@@ -1,0 +1,9 @@
+{
+	"name": "corona19-report-adf",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c057a303-eec2-4d54-86d6-9a719087b2e2",
+		"tenantId": "d820d37a-b06b-4e39-92c5-1b75b5da95f1"
+	}
+}
