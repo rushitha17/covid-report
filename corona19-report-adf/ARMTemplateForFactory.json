@@ -156,20 +156,40 @@
 							{
 								"referenceName": "ds_cases_deaths_raw_csv_http",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"relavativeURL": {
+										"value": "@variables('SourceRelativeURL')",
+										"type": "Expression"
+									}
+								}
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "ds_cases_deaths_raw_csv_dl",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"Filename": {
+										"value": "@variables('SinkRelativrURL')",
+										"type": "Expression"
+									}
+								}
 							}
 						]
 					}
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"variables": {
+					"SourceRelativeURL": {
+						"type": "String",
+						"defaultValue": "rushitha17/covid-report/refs/heads/main/hospital_admissions.csv"
+					},
+					"SinkRelativrURL": {
+						"type": "String",
+						"defaultValue": "hospital_admission.csv"
+					}
 				},
 				"annotations": []
 			},
@@ -187,12 +207,20 @@
 					"referenceName": "Is_dl_covidreportdatalake",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"Filename": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "cases_deaths.csv",
+						"fileName": {
+							"value": "@dataset().Filename",
+							"type": "Expression"
+						},
 						"folderPath": "ecdc",
 						"fileSystem": "raw"
 					},
@@ -216,12 +244,20 @@
 					"referenceName": "ls_http_opendata_ecdc_europe_eu",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"relavativeURL": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "HttpServerLocation",
-						"relativeUrl": "rushitha17/covid-report/refs/heads/main/covid-report/cases_deaths.csv"
+						"relativeUrl": {
+							"value": "@dataset().relavativeURL",
+							"type": "Expression"
+						}
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
