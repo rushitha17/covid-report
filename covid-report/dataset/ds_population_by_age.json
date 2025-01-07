@@ -1,0 +1,21 @@
+{
+	"name": "ds_population_by_age",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Is_blob_covid_reportsa",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "population_by_age.xlsx",
+				"container": "population"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
