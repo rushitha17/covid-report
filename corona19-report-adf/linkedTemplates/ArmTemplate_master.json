@@ -21,7 +21,7 @@
 		},
 		"ls_http_opendata_ecdc_europe_eu_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://github.com"
+			"defaultValue": "https://raw.githubusercontent.com/"
 		},
 		"containerUri": {
 			"type": "string",

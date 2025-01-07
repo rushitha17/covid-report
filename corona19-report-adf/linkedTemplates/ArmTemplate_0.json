@@ -21,7 +21,7 @@
 		},
 		"ls_http_opendata_ecdc_europe_eu_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://github.com"
+			"defaultValue": "https://raw.githubusercontent.com/"
 		}
 	},
 	"variables": {
@@ -116,7 +116,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "HttpServerLocation",
-						"relativeUrl": "rushitha17/covid-report/blob/main/covid-report/cases_deaths.csv"
+						"relativeUrl": "rushitha17/covid-report/refs/heads/main/covid-report/cases_deaths.csv"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
