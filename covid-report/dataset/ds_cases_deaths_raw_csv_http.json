@@ -5,12 +5,20 @@
 			"referenceName": "ls_http_opendata_ecdc_europe_eu",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"relavativeURL": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "rushitha17/covid-report/refs/heads/main/covid-report/cases_deaths.csv"
+				"relativeUrl": {
+					"value": "@dataset().relavativeURL",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
