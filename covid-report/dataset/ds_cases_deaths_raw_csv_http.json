@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "rushitha17/covid-report/blob/main/covid-report/cases_deaths.csv"
+				"relativeUrl": "rushitha17/covid-report/refs/heads/main/covid-report/cases_deaths.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
